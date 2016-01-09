@@ -1,0 +1,69 @@
+/** The CSS file for the movie details
+ *  @package    Styles
+ *  @version    0.1
+ *  @author     Jos Nienhuis
+ *  @copyright  Copyright (c) 2013 Jos Nienhuis
+ *  @since      04-04-2014
+ */
+div#wrapper{
+    width:auto;
+    margin-right:15px
+}
+body{
+    overflow-y:scroll !important
+}
+table#moviedetails td.label{
+    color:#386101;
+    font-weight:bold
+}
+table#moviedetails{
+    border:none;
+    float:left;
+    width:100%
+}
+table#moviedetails td{
+    padding:10px;
+    border-top:1px solid #CCC !important
+}
+table#moviedetails td.label{
+    width:150px
+}
+table#moviedetails th{
+    color:#386101;
+    text-align:left;
+    font-size:24px
+}
+div#header_wrapper h1{
+    float:left;
+    margin:0;
+    width:70%
+}
+div#header_wrapper p{
+    float:right;
+    margin-top:15px;
+    font-size:12px;
+    font-style:italic;
+    width:30%;
+    text-align:right
+}
+div#header_wrapper{
+    margin:0 10px 15px 0;
+    border-bottom:1px solid #CCC;
+    width:100%;
+    float:left
+}
+a#toggleCompleteOutline{
+    float:left;
+    clear:left
+}
+p#plot{
+    float:left;
+    clear:left
+}
+div#trailer_wrapper{
+    text-align:center;
+    float:left;
+    width:100%;
+    border-bottom:1px solid #CCC;
+    padding-bottom:15px
+}

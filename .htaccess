@@ -1,0 +1,7 @@
+RewriteEngine On
+
+# Exlude existing files
+RewriteCond %{REQUEST_FILENAME} !-f
+# Exclude existing directories
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^.*$ index.php [L]

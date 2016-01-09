@@ -1,0 +1,67 @@
+/** The default CSS file
+ *  @package    Styles
+ *  @version    0.1
+ *  @author     Jos Nienhuis
+ *  @copyright  Copyright (c) 2013 Jos Nienhuis
+ *  @since      04-04-2014
+ */
+*{
+    font-family:Arial,Verdana;
+    margin:0;
+    padding:0 
+}
+html, body{
+    height:100%;
+    overflow:hidden;
+    
+}
+.hidden{
+    display:none;
+}
+
+div#wrapper{
+    margin:0 auto;
+    width:900px;
+}
+
+img#fanart{
+    z-index:1;
+    min-height:100%;
+    width:100%;
+    left:0;
+    top:0;
+    position:absolute;
+    display:none
+}
+div#imageflow{
+    overflow:hidden
+}
+div#imageflow_wrapper{
+    position:relative
+}
+div#coverflow_top{
+    width:100%;
+    background-color: rgba(255, 255, 255, 0.6);
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:2;
+}
+div#search{
+    float:right;
+    margin:10px 10px 10px 0 ;
+}
+div.autocomplete-suggestions{
+    background-color:#FFF;
+    cursor:pointer;
+    padding:0 2px 0 2px;
+}
+div.autocomplete-suggestion{
+    padding-bottom:3px;
+    border:1px solid #CCC;
+    border-width:0 0 1px 0;
+    margin-bottom:3px
+}
+div.autocomplete-selected{
+    background-color:#CCC
+}
