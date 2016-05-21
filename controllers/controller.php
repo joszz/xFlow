@@ -15,7 +15,7 @@ abstract class Controller {
     protected $styles   = array('default.css',
                                 'jquery.fancybox.css',
                                 'imageflow.packed.css');
-    protected $scripts  = array('js/jquery-2.2.3.min.js',
+    protected $scripts  = array('js/jquery-2.2.4.min.js',
                                 'js/jquery.fancybox.pack.js',
                                 'js/imageflow.js',
                                 'js/jquery.autocomplete.js',
