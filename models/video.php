@@ -14,7 +14,7 @@ class VideoModel Extends Model {
      *  @since      04-04-2014    
      */
     protected function setDatabaseName(){
-        mysql_select_db($this->settings['db']['dbname']['video']) or die (mysql_error());
+        mysqli_select_db($this->dbLink, $this->settings['db']['dbname']['video']) or die (mysqli_error($this->dbLink));
     }
     
     /** Gets all movies from the XBMC database
@@ -25,7 +25,7 @@ class VideoModel Extends Model {
      *  @since      04-04-2014    
      */
     public function getMovies(){
-        return $this->extractImagesFromXML($this->fetchall($this->query("SELECT * FROM movie_view ORDER BY c10")));
+        return $this->extractImagesFromXML($this->fetchall($this->query("SELECT * FROM movie_view ORDER BY UPPER(LTRIM(Replace(c16, 'The', '')))")));
     }
     
     /** Gets all movie information for a movie by ID
@@ -72,7 +72,6 @@ class VideoModel Extends Model {
                                                                     WHERE c00 < '" . $moviesSearchedFor[0]['c00'] . "'
                                                                     ORDER BY c00 DESC
                                                                     LIMIT 0, 4)
-                                                                    
                                                                     
                                                                     UNION ALL
                                                                     

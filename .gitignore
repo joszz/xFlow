@@ -45,3 +45,13 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Own defined excludes
+SyncToy_*.dat
+*.phpproj
+*.phpproj.user
+*.sln
+*.v12.suo
+generate-doc.bat
+generate-doc.sh
+.vs/

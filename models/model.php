@@ -9,7 +9,7 @@
 
 abstract class Model {
     protected   $settings;
-    private     $dbLink;
+    protected   $dbLink;
     
     /** The constructor of each Model, setting $settings to a local variable and calling setDBLink to establish a DB connection.
      *  @param      array               $settings           The array of settings defined in config.php
@@ -30,7 +30,7 @@ abstract class Model {
      */    
     private function setDBLink(){
         if(empty($this->dbLink)){
-            $this->dbLink = mysql_connect($this->settings['db']['host'], 
+            $this->dbLink = mysqli_connect($this->settings['db']['host'], 
                                           $this->settings['db']['user'], 
                                           $this->settings['db']['pass']) or die(mysql_error());    
             $this->setDatabaseName();
@@ -53,7 +53,7 @@ abstract class Model {
      *  @since      04-04-2014
      */    
     final public function query($query){
-        $query = mysql_query($query) or die(mysql_error());
+        $query = mysqli_query($this->dbLink, $query) or die(mysql_error());
         return $query;
     }
     
@@ -67,7 +67,7 @@ abstract class Model {
      *  @since      04-04-2014
      */    
     final public function fetch($result, $assoc = true){
-        return $assoc ? mysql_fetch_assoc($result) : mysql_fetch_array($result);
+        return $assoc ? mysqli_fetch_assoc($result) : mysqli_fetch_array($result);
     }
     
     /** Wrapper for mysql_fetch_assoc() and mysql_fetch_array, but instead of fetch retrieves all rows
@@ -82,7 +82,7 @@ abstract class Model {
     final public function fetchAll($result, $assoc = true){
         $values = array();
 
-        while($row = ($assoc ? mysql_fetch_assoc($result) : mysql_fetch_array($result))) $values[] = $row;
+        while($row = ($assoc ? mysqli_fetch_assoc($result) : mysqli_fetch_array($result))) $values[] = $row;
 
         return $values;
     }
