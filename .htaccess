@@ -5,3 +5,5 @@ RewriteCond %{REQUEST_FILENAME} !-f
 # Exclude existing directories
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^.*$ index.php [L]
+
+Header set Content-Security-Policy "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-eval';style-src 'self' 'unsafe-inline' fonts.googleapis.com;img-src 'self' data: image.tmdb.org;font-src 'self' data: fonts.googleapis.com fonts.gstatic.com;frame-src 'self' www.youtube.com"
