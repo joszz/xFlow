@@ -10,7 +10,7 @@
 $settings['db']['host']             = 'localhost';
 $settings['db']['user']             = 'user';
 $settings['db']['pass']             = 'password';
-$settings['db']['dbname']['video']  = 'MyVideos107';
+$settings['db']['dbname']['video']  = 'MyVideos116';
 
 $settings['debug'] = false;
 
